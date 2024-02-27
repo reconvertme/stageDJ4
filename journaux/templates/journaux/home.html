@@ -1,0 +1,42 @@
+<!-- journaux/templates/journaux/home.html -->
+{% extends "journaux/base.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <h1>Presse et mag</h1>
+    <!-- <p>Nos {{ journaux|length }} magazines</p> -->
+
+    <!-- affichage 1 par 1 -->
+    <!-- <ul>
+        <li>{{ journaux.0.nom}}</li>
+        <li>{{ journaux.1.nom}}</li>
+    </ul> -->
+
+    <br>
+    <!-- affichage for : VUE AVEC DEF-->
+    <!-- <ul>
+        {% for journal in journaux %}
+        <li>{{ journal.nom}}</li>
+        {% endfor %}
+    </ul> -->
+
+    <!-- affichage for : VUE AVEC CLASSE-->
+    <!-- <ul>
+        {% for journal in journal_list %}
+        <li>{{ journal.nom}}</li>
+        {% endfor %}
+    </ul> -->
+
+    <!-- Pagination -->
+    <ul class="">
+        {% for journal in page_obj %}
+          <li>{{ journal.nom }}</li>
+        {% endfor %}
+    </ul>
+
+    <br><hr>
+    <li>{{ page_obj.1.nom}}</li>
+     {% include "journaux/pagination.html" %}
+{% endblock %}
